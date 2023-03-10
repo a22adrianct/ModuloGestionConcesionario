@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <!-- Menú principal -->
+        <menuitem id="menu_concesionario_root" name="Concesionario" web_icon="Concesionario, static/description/icon.png"/>
+
+        <!-- Submenús -->
+        <menuitem id="menu_coches" name="Coches" parent="menu_concesionario_root"
+            action="action_car_tree"/>
+        <menuitem id="menu_compradores" name="Compradores" parent="menu_concesionario_root"
+            action="action_buyer_tree"/>
+        <menuitem id="menu_ventas" name="Ventas" parent="menu_concesionario_root"
+            action="action_sale_tree"/>
+
+    </data>
+</odoo>

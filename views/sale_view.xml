@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <!-- Form view para el modelo Sale -->
+        <record id="view_sale_form" model="ir.ui.view">
+            <field name="name">concesionario.sale.form</field>
+            <field name="model">concesionario.sale</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="car_id"/>
+                            <field name="buyer_id"/>
+                            <field name="date"/>
+                            <field name="price"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view para el modelo Sale -->
+        <record id="view_sale_tree" model="ir.ui.view">
+            <field name="name">concesionario.sale.tree</field>
+            <field name="model">concesionario.sale</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="car_id"/>
+                    <field name="buyer_id"/>
+                    <field name="date"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Acciones para el modelo Sale -->
+        <record id="action_sale_tree" model="ir.actions.act_window">
+            <field name="name">Ventas</field>
+            <field name="res_model">concesionario.sale</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haz clic en el botón para añadir una venta.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_sale_form" model="ir.actions.act_window">
+            <field name="name">Venta</field>
+            <field name="res_model">concesionario.sale</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <!-- Menú para el modelo Sale -->
+        <menuitem id="menu_sale_root" name="Ventas"/>
+        <menuitem id="menu_sale" name="Ventas" parent="menu_sale_root" action="action_sale_tree"/>
+
+    </data>
+</odoo>
